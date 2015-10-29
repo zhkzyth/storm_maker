@@ -1,0 +1,19 @@
+[group: forum-apps]
+programs=auth
+
+[program: auth]
+process_name = main-%(process_num)s
+directory = /home/beauty
+command=/home/beauty/.virtualenvs/bra_auth/bin/python2.7 /home/beauty/code/auth/auth/src/app.py --port=%(process_num)s
+user=beauty
+autostart=True
+autorestart=True
+loglevel=info
+stdout_logfile = /home/beauty/code/auth/auth/logs/auth_stdout.log
+stderr_logfile = /home/beauty/code/auth/auth/logs/auth_stderr.log
+stdout_logfile_maxbytes=50MB   ; max # logfile bytes b4 rotation (default 50MB)
+stdout_logfile_backups=10     ; # of stdout logfile backups (default 10)
+stderr_logfile_maxbytes=50MB   ; max # logfile bytes b4 rotation (default 50MB)
+stderr_logfile_backups=10     ; # of stderr logfile backups (default 10)
+numprocs=4
+numprocs_start=1
