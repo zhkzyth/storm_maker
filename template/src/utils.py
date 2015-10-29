@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # encoding: utf-8
+
 import os
 import time
 import calendar
@@ -14,6 +15,7 @@ import pytz
 from settings import (
     CONNECT_TIMEOUT, REQUEST_TIMEOUT
 )
+
 
 def get_real_file_path(script_path, filename=""):
     path = os.path.join(
